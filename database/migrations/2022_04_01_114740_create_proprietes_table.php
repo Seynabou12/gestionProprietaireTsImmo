@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Proprietaire;
+use App\Models\TypeProprietes;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -24,6 +25,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreignIdFor(Proprietaire::class);
+            $table->foreignIdFor(TypeProprietes::class);
         });
     }
 

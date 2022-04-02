@@ -37,7 +37,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6 text-center">
-                <h1>ENREGISTRER UNE PROPRIETES</h1>
+                <h1>ENREGISTRER UN PROPRIETAIRE</h1>
             </div>
         </div>
     </div>
@@ -45,12 +45,12 @@
 
 <div class="container-fluid">
 
-    <form action="{{ route('proprietes.store')}}" class="mt-4" enctype="multipart/form-data" method="post">
+    <form action="{{ route('typeProprietes.store')}}" class="mt-4" enctype="multipart/form-data" method="post">
 
         @csrf
           <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title text-center">Formulaire d'ajout de Propriétés</h3>
+                <h3 class="card-title text-center">Formulaire d'ajout de Type</h3>
             </div>
 
         </div>
@@ -60,65 +60,15 @@
             <div class="card-body">
                 <div class="row">
                     <div class="form-group col-md-6">
-                        <label for="nom">Nom Propriétes</label>
-                        <input type="text" name="nom" class="form-control" required>
+                        <label for="nom_type">Nom Type Proprietes</label>
+                        <input type="text" name="nom_type" class="form-control" required>
                     </div>
                      <div class="form-group col-md-6">
-                        <label for="superficie">Superficie</label>
-                        <input type="text" name="superficie" class="form-control" required>
-                    </div>
-                </div> 
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        <label for="">Description</label>
-                        <input type="description" name="description" class="form-control" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="">Adresse</label>
-                        <input type="text" name="adrese" class="form-control" required>
+                        <label for="libelle">Libelle</label>
+                        <input type="text" name="libelle" class="form-control" required>
                     </div>
                 </div>
-                   
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        <label for="disponibilites">Disponibilités</label>
-                        <input type="text" name="disponibilites" class="form-control" required>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="image">Télécharger une Image</label>
-                        <input type="file" name="image" class="form-control"  placeholder="image de la propriete" required>
-                    </div>
-                   
-                </div>
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        <label class="block text-gray-700 text-sm font-bold mb-2 " for="category">
-                            <h5> Propriétaire </h5>
-                        </label>
-                        <select name="proprietaire" id="proprietaire" class="form-control">
-
-                            @foreach ($proprietaires as $proprietaire)
-
-                                <option value="{{ $proprietaire->id }}">{{ $proprietaire->nom }}</option>
-
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label class="block text-gray-700 text-sm font-bold mb-2 " for="category">
-                            <h5>Type de Propriétés</h5>
-                        </label>
-                        <select name="nom_type" id="nom_type" class="form-control">
-
-                            @foreach ($typeProprietes as $typePropriete)
-
-                                <option value="{{ $typePropriete->id }}">{{ $typePropriete->nomType }}</option>
-
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-                    
+            
                 <div class="form-group mt-4">
                     <input type="submit" value="Enregistrer" class="btn btn-primary" name="add">
                 </div>

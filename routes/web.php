@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProprietaireController;
-use App\Http\Controllers\ProprietesController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProprietesController;
+use App\Http\Controllers\ProprietaireController;
+use App\Http\Controllers\TypeProprietesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [ProprietesController::class, 'welcome'])->name('proprietes.welcome');
-Route::get('proprietaire/create', [ProprietaireController::class, 'create'])->name('proprietes.create');
+
+Route::get('typeProprietes/create', [TypeProprietesController::class, 'create'])->name('typeProprietes.create');
+Route::post('typeProprietes/store', [TypeProprietesController::class, 'store'])->name('typeProprietes.store');
+
+
+Route::get('proprietaire/create', [ProprietaireController::class, 'create'])->name('proprietaire.create');
 Route::post('proprietaire/store', [ProprietaireController::class, 'store'])->name('proprietaire.store');
 
 Route::get('proprietes/create', [ProprietesController::class, 'create'])->name('proprietes.create');
 Route::post('proprietes/store', [ProprietesController::class, 'store'])->name('proprietes.store');
-
-Route::get('proprietes', [ProprietesController::class, 'index']);
 
 
 Route::get('/dashboard', function () {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Proprietaire;
 use App\Models\Proprietes;
+use App\Models\TypeProprietes;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -18,14 +19,14 @@ class ProprietesController extends Controller
     public function welcome()
     {
         $proprietes = Proprietes::with('proprietaire')->get();
-      
         return view('proprietes.welcome', compact('proprietes'));
     }
 
     public function create()
     {
         $proprietaires = Proprietaire::all();
-        return view('proprietes.create', compact('proprietaires'));
+        $typeProprietes = TypeProprietes::all();
+        return view('proprietes.create', compact('proprietaires', 'typeProprietes'));
     }
 
     public function store(Request $request)
@@ -41,7 +42,8 @@ class ProprietesController extends Controller
             'disponibilites'=> $request->disponibilites,
             'description'=> $request->description,
     
-            'proprietaire_id' => $request->proprietaire
+            'proprietaire_id' => $request->proprietaire,
+            'typeProprietes_id' => $request->typeProprietes,
             
         ]);
         return redirect()->route('proprietes.welcome')->with('success', 'Votre cateorie a été bien créé');

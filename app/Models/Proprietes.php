@@ -18,8 +18,14 @@ class Proprietes extends Model
         return $this->belongsTo(Proprietaire::class);
     }
 
+    public function typeProprietes()
+    {
+        return $this->belongsTo(TypeProprietes::class);
+    }
+
     public function getTitleAttribut($attribute)
     {
         return Str::title($attribute);
     }
+
 }
