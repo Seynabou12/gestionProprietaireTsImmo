@@ -14,7 +14,9 @@
   <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="{{asset('assets/vendor/aos/aos.css')}}" rel="stylesheet">
@@ -50,7 +52,7 @@
 
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto active" href="#hero">Acceuil</a></li>
             <li><a class="nav-link scrollto" href="#about">About</a></li>
             <li><a class="nav-link scrollto" href="#services">Services</a></li>
             <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
@@ -91,6 +93,26 @@
     </div>
   </section><!-- End Hero -->
 
+      <section id="services" class="services section-bg">
+        <div class="container">
+          <div class="row">
+            @foreach ($proprietes as $propriete)
+
+            <div class="col-md-4 col-sm-6 align-items-stretch mb-4">
+              <div class="icon-box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+                <div class="container">
+                  <img style="width: 100%;" src="/storage/{{ $propriete->photo }}" alt="">
+                </div>
+                <h4><a href="">{{ $propriete->nom }}</a></h4>
+                <p>{{ Str::limit($propriete->description, 100)}}</p>
+              </div>
+            </div>
+            @endforeach
+
+          </div>
+
+        </div>
+      </section>
   <!-- Vendor JS Files -->
   <script src="{{asset('assets/vendor/purecounter/purecounter.js')}}"></script>
   <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>

@@ -23,3 +23,10 @@ Route::get('proprietes/create', [ProprietesController::class, 'create'])->name('
 Route::post('proprietes/store', [ProprietesController::class, 'store'])->name('proprietes.store');
 
 Route::get('proprietes', [ProprietesController::class, 'index']);
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';

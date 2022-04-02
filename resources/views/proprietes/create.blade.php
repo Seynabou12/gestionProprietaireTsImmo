@@ -84,12 +84,11 @@
                         <label for="disponibilites">Disponibilités</label>
                         <input type="text" name="disponibilites" class="form-control" required>
                     </div>
-                    <div class="form-control col-md-6">
-                        <label class="block text-gray-700 text-sm font-bold mb-2 " for="image">
-                            <h5>Télécharger une Image</h5>
-                        </label>
-                        <input class="shadow appearance-none border rounded form-control w-full py-2 px-3 text-gray-700 leading-tight  e" id="image" name="image" type="file" placeholder="image de la propriete">
+                    <div class="form-group col-md-6">
+                        <label for="image">Télécharger une Image</label>
+                        <input type="file" name="image" class="form-control"  placeholder="image de la propriete" required>
                     </div>
+                   
                 </div>
                 <div class="row">
                     <div class="form-group col-md-6">

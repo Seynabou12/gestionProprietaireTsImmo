@@ -17,7 +17,8 @@ class ProprietesController extends Controller
      */
     public function welcome()
     {
-        $proprietes = Proprietes::all();
+        $proprietes = Proprietes::with('proprietaire')->get();
+      
         return view('proprietes.welcome', compact('proprietes'));
     }
 
@@ -29,6 +30,7 @@ class ProprietesController extends Controller
 
     public function store(Request $request)
     {
+        Proprietes::create($request->all());
         $photoName = $request->file()['image']->store('proprietes');
    
         Proprietes::create([
@@ -43,5 +45,9 @@ class ProprietesController extends Controller
             
         ]);
         return redirect()->route('proprietes.welcome')->with('success', 'Votre cateorie a été bien créé');
+       
+    
     }
+
+
 }
