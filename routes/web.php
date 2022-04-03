@@ -32,6 +32,7 @@ Route::get('proprietaire/show', [ProprietaireController::class, 'show'])->name('
 Route::get('proprietes/create', [ProprietesController::class, 'create'])->name('proprietes.create');
 Route::post('proprietes/store', [ProprietesController::class, 'store'])->name('proprietes.store');
 Route::get('proprietes/liste', [ProprietesController::class, 'liste'])->name('proprietes.liste');
+Route::get('proprietes/destroy/{id}', [ProprietesController::class, 'destroy'])->name('proprietes.destroy')->where("id","[0-9]+");
 
 
 Route::get('/dashboard', function () {

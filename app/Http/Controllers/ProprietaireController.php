@@ -50,4 +50,5 @@ class ProprietaireController extends Controller
         $proprietaires = Proprietaire::all();
         return view('proprietaire.show', compact('proprietaires'));
     }
+
 }

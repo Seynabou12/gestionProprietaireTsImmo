@@ -84,13 +84,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="../proprietes/liste" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Liste des Propriétes</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="../proprietaire/liste" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Liste des Propriétaires</p>
                 </a>

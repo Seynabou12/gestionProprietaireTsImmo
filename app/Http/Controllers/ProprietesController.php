@@ -59,4 +59,12 @@ class ProprietesController extends Controller
         return view('proprietes.liste',compact('proprietes'));
     }
 
+
+    public function destroy($id)
+    {
+        $proprietes = Proprietes::findOrFail($id);
+        $proprietes->delete();
+        
+        return redirect('/proprietes/liste')->with('success', 'proprietes deleted successfully');
+    }
 }

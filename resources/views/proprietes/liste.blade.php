@@ -35,7 +35,7 @@
     <div class="h1 alert alert-secondary text-center" >
        LISTE DES PROPRIETES
       </div>
-    <div class="row mt-3">
+    <div class="row mt-3 ms-3">
 
             <table class="table table-bordered table-striped mt-3">
                 <div class="jsgrid-grid-header jsgrid-header-scrollbar">
@@ -48,6 +48,7 @@
                             <th>Disponibilités</th>
                             <th>Description</th>
                             <th>Nom du Propriétaire</th>
+                            <th>Type de Propriétes</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -62,12 +63,15 @@
                         <td>{{ $proprietes->photo }}</td>
                         <td>{{ $proprietes->disponibilites }}</td>
                         <td>{{ $proprietes->description }}</td>
-                        <td>{{ $proprietes->proprietaire->nom}}</td>
+                        <td>{{ $proprietes->proprietaire->prenom}} {{ $proprietes->proprietaire->nom}}</td>
+                        <td>{{ $proprietes->typeProprietes->nomType}}</td>
                         <td>
                             {{-- <a class="btn btn-info" href="{{ route('proprietaire.show',$proprietaire->id) }}">Details</a> --}}
                             {{-- <a class="btn btn-primary"
                                 href="{{ route('proprietaire.edit',$proprietaire->id) }}">Edit</a> --}}
 
+                                <a href="#" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a>
+                                <a href="{{ route('proprietes.destroy',['id' => $proprietes->id]) }}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                         </td>
                     </tr>
                     @endforeach

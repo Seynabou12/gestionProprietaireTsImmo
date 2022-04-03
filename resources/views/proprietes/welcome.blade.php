@@ -108,6 +108,7 @@
 
     </div>
   </section>
+  @include('template.contact')
   <!-- Vendor JS Files -->
   <script src="{{asset('assets/vendor/purecounter/purecounter.js')}}"></script>
   <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>

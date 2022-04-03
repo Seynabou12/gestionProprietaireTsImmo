@@ -31,22 +31,16 @@
     <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.min.css')}}">
 </head>
 
-@include('template.header');
+@include('template.header')
 
-@include('template.sidebar');
+@include('template.sidebar')
 
-<div class="container-fluid" style="padding: 10px 90px;">
-    <div class="row mt-5">
-        <span class="h2"> Liste des Propriétaires </span>
+<div class="container-fluid" >
+    <div class="h1 alert alert-secondary text-center" >
+        LISTE DES PROPRIETAIRES
+       </div>
+     <div class="row mt-3 ms-3">
 
-
-        <div class="row mt-4">
-
-            @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                <p>{{ $message }}</p>
-            </div>
-            @endif
 
             <table class="table table-bordered table-striped">
                 <div class="jsgrid-grid-header jsgrid-header-scrollbar">
@@ -79,10 +73,12 @@
                         <td>{{ $proprietaire->lieu_naissance }}</td>
                         <td>{{ $proprietaire->email }}</td>
                         <td>
-                            <a class="btn btn-info" href="{{ route('proprietaire.show',$proprietaire->id) }}">Details</a>
+                            
                             {{-- <a class="btn btn-primary"
                                 href="{{ route('proprietaire.edit',$proprietaire->id) }}">Edit</a> --}}
-
+                                <a href="#" class="btn btn-primary"><i class="bi bi-pen-fill"></i></a>
+                                <a href="{{ route('proprietaire.show',$proprietaire->id) }}" class="btn btn-success"><i class="bi bi-plus"></i></a>
+                                <a href="#" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                         </td>
                     </tr>
                     @endforeach
