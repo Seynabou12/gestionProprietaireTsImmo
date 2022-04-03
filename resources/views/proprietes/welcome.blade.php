@@ -53,25 +53,14 @@
         <nav id="navbar" class="navbar">
           <ul>
             <li><a class="nav-link scrollto active" href="#hero">Acceuil</a></li>
-            <li><a class="nav-link scrollto" href="#about">About</a></li>
-            <li><a class="nav-link scrollto" href="#services">Services</a></li>
-            <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+            <li><a class="nav-link scrollto" href="#services">Types Propriétes</a></li>
+            <li><a class="nav-link scrollto" href="#">Locations</a></li>
+            <li><a class="nav-link scrollto " href="#">Portfolio</a></li>
             <li><a class="nav-link scrollto" href="#team">Team</a></li>
-            <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="#"><span>Ajouter</span> <i class="bi bi-chevron-down"></i></a>
               <ul>
-                <li><a href="#">Drop Down 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Drop Down 2</a></li>
-                <li><a href="#">Drop Down 3</a></li>
-                <li><a href="#">Drop Down 4</a></li>
+                <li><a href="proprietes/create">Propriétés</a></li>
+                <li><a href="proprietaire/create">Propriétaires</a></li>
               </ul>
             </li>
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
@@ -87,32 +76,38 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
-      <h1>Your New Online Presence with Bethany</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      <h1>Réussir votre séjour à Tasnim Immobilier</h1>
+      <h2><span>Trouver une location meublée selon votre Budget</span></h2>
+      <a href="#" class="btn-get-started scrollto">Découvrir nos locations</a>
     </div>
   </section><!-- End Hero -->
 
-      <section id="services" class="services section-bg">
-        <div class="container">
-          <div class="row">
-            @foreach ($proprietes as $propriete)
-
-            <div class="col-md-4 col-sm-6 align-items-stretch mb-4">
-              <div class="icon-box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
-                <div class="container">
-                  <img style="width: 100%;" src="/storage/{{ $propriete->photo }}" alt="">
-                </div>
-                <h4><a href="">{{ $propriete->nom }}</a></h4>
-                <p>{{ Str::limit($propriete->description, 100)}}</p>
-              </div>
+  <section id="services" class="services section-bg">
+    <div class="container">
+      <div class="row">
+      @foreach ($proprietes as $propriete)
+      
+        <div class="col-md-4 align-items-stretch mb-4 d-flex">
+          <div class="icon-box aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+            <div class="container">
+              <img style="width: 100%;" src="/storage/{{ $propriete->photo }}" alt="">
             </div>
-            @endforeach
+              <br>
+            <h4><a href="">{{ $propriete->typeProprietes->nomType }}</a></h4>
 
+            <p>{{ Str::limit($propriete->typeProprietes->libelle, 100)}}</p>
+            <br>
+            <div class="flex items-center justify-between mt-4"><a href="#" class="text-blue-500 hover:underline">
+                Voir Plus
+              </a>
+            </div>
           </div>
-
         </div>
-      </section>
+      @endforeach
+    </div>
+
+    </div>
+  </section>
   <!-- Vendor JS Files -->
   <script src="{{asset('assets/vendor/purecounter/purecounter.js')}}"></script>
   <script src="{{asset('assets/vendor/aos/aos.js')}}"></script>

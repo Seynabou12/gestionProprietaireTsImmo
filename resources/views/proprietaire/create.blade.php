@@ -74,7 +74,7 @@
                         <input type="text" name="adresse" class="form-control" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="disponibilite">Telephone</label>
+                        <label for="telephone">Telephone</label>
                         <input type="text" name="telephone" class="form-control" required>
                     </div>
                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Proprietaire;
+use App\Models\Proprietes;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -36,5 +37,17 @@ class ProprietaireController extends Controller
         ]);
       
         return redirect()->route('proprietes.create')->with('success', 'Votre proprietés a été bien créé');
+    }
+
+    public function liste(Proprietaire $proprietaire)
+    {
+        $proprietaires = Proprietaire::all();
+        return view('proprietaire.liste',compact('proprietaires'));
+    }
+
+    public function show(Proprietaire $proprietaire)
+    {
+        $proprietaires = Proprietaire::all();
+        return view('proprietaire.show', compact('proprietaires'));
     }
 }

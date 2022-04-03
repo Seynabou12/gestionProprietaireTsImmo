@@ -74,28 +74,25 @@
                         <input type="description" name="description" class="form-control" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="">Adresse</label>
-                        <input type="text" name="adrese" class="form-control" required>
+                        <label for="disponibilites">Disponibilités</label>
+                        <select name="disponibilites" id="">
+                            <option value="true">Oui</option>
+                            <option value="false">Non</option>
+                        </select>
                     </div>
                 </div>
                    
                 <div class="row">
-                    <div class="form-group col-md-6">
-                        <label for="disponibilites">Disponibilités</label>
-                        <input type="text" name="disponibilites" class="form-control" required>
-                    </div>
+                   
                     <div class="form-group col-md-6">
                         <label for="image">Télécharger une Image</label>
                         <input type="file" name="image" class="form-control"  placeholder="image de la propriete" required>
                     </div>
-                   
-                </div>
-                <div class="row">
                     <div class="form-group col-md-6">
                         <label class="block text-gray-700 text-sm font-bold mb-2 " for="category">
                             <h5> Propriétaire </h5>
                         </label>
-                        <select name="proprietaire" id="proprietaire" class="form-control">
+                        <select name="proprietaire_id" id="proprietaire" class="form-control">
 
                             @foreach ($proprietaires as $proprietaire)
 
@@ -104,6 +101,9 @@
                             @endforeach
                         </select>
                     </div>
+                </div>
+                <div class="row">
+                    
                     <div class="form-group col-md-6">
                         <label class="block text-gray-700 text-sm font-bold mb-2 " for="category">
                             <h5>Type de Propriétés</h5>

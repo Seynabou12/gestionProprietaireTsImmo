@@ -24,6 +24,9 @@ Route::post('typeProprietes/store', [TypeProprietesController::class, 'store'])-
 
 Route::get('proprietaire/create', [ProprietaireController::class, 'create'])->name('proprietaire.create');
 Route::post('proprietaire/store', [ProprietaireController::class, 'store'])->name('proprietaire.store');
+Route::get('proprietaire/liste', [ProprietaireController::class, 'liste'])->name('proprietaire.liste');
+Route::get('proprietaire/show', [ProprietaireController::class, 'show'])->name('proprietaire.show');
+
 
 Route::get('proprietes/create', [ProprietesController::class, 'create'])->name('proprietes.create');
 Route::post('proprietes/store', [ProprietesController::class, 'store'])->name('proprietes.store');

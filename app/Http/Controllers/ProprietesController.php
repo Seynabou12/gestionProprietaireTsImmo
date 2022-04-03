@@ -31,25 +31,32 @@ class ProprietesController extends Controller
 
     public function store(Request $request)
     {
-        Proprietes::create($request->all());
-        $photoName = $request->file()['image']->store('proprietes');
+        // Proprietes::create($request->all());
+        $fileName = $request->image;
+        $photoName = $request->file()['image']->storeAs('proprietes', $fileName, 'public' );
    
         Proprietes::create([
             
             'nom' => $request->nom,
             'superficie'=> $request->superficie,
             'photo'=> $photoName,
-            'disponibilites'=> $request->disponibilites,
+            'disponibilites'=> false,
+            
             'description'=> $request->description,
     
-            'proprietaire_id' => $request->proprietaire,
-            'typeProprietes_id' => $request->typeProprietes,
-            
+            'proprietaire_id' => $request->proprietaire_id,
+           
+            'type_proprietes_id' => $request->nom_type,
+           
         ]);
-        return redirect()->route('proprietes.welcome')->with('success', 'Votre cateorie a été bien créé');
-       
-    
+
+        return redirect()->route('proprietes.welcome')->with('success', 'Votre categorie a été bien créé');
     }
 
+    public function liste(Proprietes $proprietes)
+    {
+        $proprietes = Proprietes::all();
+        return view('proprietes.liste',compact('proprietes'));
+    }
 
 }

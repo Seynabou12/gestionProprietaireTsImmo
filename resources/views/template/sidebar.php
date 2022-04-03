@@ -55,19 +55,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="proprietaire.create" class="nav-link">
+                <a href="../proprietaire/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ajouter de Propriétaire</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="proprietes.create" class="nav-link">
+                <a href="../proprietes/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ajouter de Propriétes</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="typeProprietes.create" class="nav-link">
+                <a href="../typeProprietes/create" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ajouter Type de Propriétes</p>
                 </a>
